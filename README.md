@@ -1,2 +1,2 @@
-This is my Portfolio Project for "HTML and CSS in depth" course from Meta
+This is my Portfolio Project for "HTML and CSS in depth" course from Meta\n
 Images aren't mine
