@@ -1,11 +1,18 @@
+:root {
+    --main-color: #f4ce14;
+    --secondary-color: #495e57;
+    --light-color: #fff8d8;
+    --shadow: 5px 5px 0px 0px black;
+}
+
 body {
     font-family: "Century Schoolbook";
 }
 
 .container {
     width: 100%; /* for mobile */
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 1rem;
+    padding-left: 1rem;
     margin-right: auto;
     margin-left: auto;
 }
@@ -39,8 +46,10 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 15px 30px; */
+    padding: 1rem;
+    margin-top: 1rem;
     outline: 1px solid black;
+    border-radius: 1rem;
 }
 header .container > * {
     padding: 0 1rem;
@@ -49,6 +58,7 @@ header .container > * {
 header nav {
     display: flex;
     gap: 4rem;
+    color: var(--secondary-color);
 }
 
 header .logo img {
@@ -58,14 +68,19 @@ header .logo img {
 main .container {
     padding: 2rem 0;
     display: grid;
-    grid-template-areas:
-        "p"
-        "m";
     gap: 2rem;
 }
 
 main article {
     outline: 1px solid black;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
+}
+
+main .menu article h1 {
+    color: var(--secondary-color);
 }
 
 main article img {
@@ -75,7 +90,6 @@ main article img {
 }
 
 main .container > article {
-    grid-area: "p";
     height: 16rem;
     position: relative;
 }
@@ -86,11 +100,27 @@ main .container > article > img {
 }
 
 main .container > article .pro {
-    color: white;
+    color: white !important;
     position: absolute;
     bottom: 0;
     left: 2rem;
     transform: translateY(-1rem);
+}
+
+main .container > article .pro span {
+    position: relative;
+    color: var(--secondary-color);
+}
+
+main .container > article .pro span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    bottom: 0;
+    left: 0;
+    z-index: -1;
 }
 
 main .menu {
@@ -99,6 +129,16 @@ main .menu {
     grid-template-rows: auto;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+}
+
+main .menu article {
+    padding-bottom: 2rem;
+    background-color: var(--light-color);
+}
+
+main .menu article h3 {
+    position: absolute;
+    bottom: 0;
 }
 
 main .desc {
@@ -111,4 +151,8 @@ footer .container {
     grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
+}
+
+footer .container img {
+    height: 4rem;
 }
