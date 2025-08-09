@@ -156,3 +156,9 @@ footer .container {
 footer .container img {
     height: 4rem;
 }
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
